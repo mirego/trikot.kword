@@ -42,8 +42,11 @@ object KWord : I18N {
     }
 
     override fun t(key: KWordKey, count: Int, vararg arguments: String): String {
-        // TODO: implement zero, one, other
-        return t(key)
+        return when (count) {
+            0 -> t(key)
+            1 -> source.get("${key.translationKey}_one")
+            else -> source.get(("${key.translationKey}_many"))
+        }
     }
 
     override fun t(key: KWordKey, vararg arguments: Pair<String, String>): String {
