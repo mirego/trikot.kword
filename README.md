@@ -39,8 +39,17 @@ This will generate an enum Named KWordTranslation containing all the keys contai
 # KWord usage
 
 ### Common Code
+
+for simple usage:
 ```kotlin
 val myString = KWord[KWordTranslation.HELLO_WORLD]
+```
+
+For zero/singular/plural usage:
+```kotlin
+// this would require a "hello_world", "hello_world_one" and "hello_world_many" in your translation keys 
+// (where "hello_world" is for count == 0)
+val myString = KWord.t(KWordTranslation.HELLO_WORLD, itemCount)
 ```
 
 ## Installation
