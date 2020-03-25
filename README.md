@@ -45,11 +45,33 @@ for simple usage:
 val myString = KWord[KWordTranslation.HELLO_WORLD]
 ```
 
-For zero/singular/plural usage:
+##### For zero/singular/plural usage
+To support language with multiple plurals, we adopt the interpolation pattern 
+
+Assuming the following translation key
+```json
+{
+  "plural": "{{count}} keys",
+  "plural_0": "No keys",
+  "plural_1": "One key",
+  "plural_17": "Seventeen keys"
+}
+
 ```kotlin
-// this would require a "hello_world", "hello_world_one" and "hello_world_many" in your translation keys 
-// (where "hello_world" is for count == 0)
-val myString = KWord.t(KWordTranslation.HELLO_WORLD, itemCount)
+// "No keys"
+KWord.t(KWordTranslation.PLURAL, 0)
+
+// "One key"
+KWord.t(KWordTranslation.PLURAL, 1)
+
+// "2 keys"
+KWord.t(KWordTranslation.PLURAL, 2)
+
+// "3 keys"
+KWord.t(KWordTranslation.PLURAL, 3)
+
+// "Seventeen keys"
+KWord.t(KWordTranslation.PLURAL, 17)
 ```
 
 ## Installation
