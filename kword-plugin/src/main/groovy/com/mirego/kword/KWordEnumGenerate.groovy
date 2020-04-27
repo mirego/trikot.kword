@@ -50,7 +50,7 @@ class KWordEnumGenerate extends DefaultTask {
     }
 
     private List<String> parseKeys() {
-        Set<String> keys = new HashSet<>()
+        final Set<String> keys = new HashSet<>()
         getTranslationFiles().collect {
             Map<String, Object> translations = new JsonSlurper().parse(it) as Map<String, Object>
             keys.addAll(translations.keySet())

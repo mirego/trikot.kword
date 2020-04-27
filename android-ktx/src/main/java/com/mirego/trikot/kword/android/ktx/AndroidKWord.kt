@@ -1,5 +1,6 @@
 package com.mirego.trikot.kword.android.ktx
 
+import android.util.Log
 import com.mirego.trikot.kword.I18N
 import com.mirego.trikot.kword.KWord
 import kotlinx.serialization.json.Json
@@ -33,6 +34,7 @@ object AndroidKWord {
                         .readText()
                 map.putAll(json.parseMap<String, String>(fileContent))
             } catch (ioException: IOException) {
+                Log.v("Kword", "Unable to load translation $variantPath", ioException)
             }
         }
         i18N.changeLocaleStrings(map)
