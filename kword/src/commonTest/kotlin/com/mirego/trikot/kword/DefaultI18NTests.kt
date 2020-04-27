@@ -35,6 +35,11 @@ class DefaultI18NTests {
     }
 
     @Test
+    fun `given string with missing arguments then it keeps the placeholder`() {
+        assertEquals("Hi my name is {{name}}", defaultI18N.t("hi_my_name_is_key".kk))
+    }
+
+    @Test
     fun `given string with localized replacements and arguments then it uses argument over localized replacement`() {
         assertEquals("this is foo rab", defaultI18N.t("foo_bar_key".kk, "bar_key" to "rab"))
     }
