@@ -7,6 +7,12 @@ import kotlinx.serialization.parseMap
 import java.io.IOException
 
 object AndroidKWord {
+    private val json = Json {
+        ignoreUnknownKeys = true
+        isLenient = true
+        serializeSpecialFloatingPointValues = true
+    }
+
     fun setCurrentLanguageCode(code: String) {
         setCurrentLanguageCodes(KWord, code)
     }
@@ -30,11 +36,5 @@ object AndroidKWord {
             }
         }
         i18N.changeLocaleStrings(map)
-    }
-
-    private val json = Json {
-        ignoreUnknownKeys = true
-        isLenient = true
-        serializeSpecialFloatingPointValues = true
     }
 }
