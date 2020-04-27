@@ -32,7 +32,7 @@ object AndroidKWord {
                 val fileContent =
                     KWord::class.java.getResource("/translations/translation.$variantPath.json")!!
                         .readText()
-                map.putAll(json.parseMap<String, String>(fileContent))
+                map.putAll(json.parseMap(fileContent))
             } catch (ioException: IOException) {
                 Log.v("Kword", "Unable to load translation $variantPath", ioException)
             }
