@@ -1,7 +1,9 @@
 package com.mirego.trikot.kword
 
+import com.mirego.trikot.foundation.CommonJSExport
 import com.mirego.trikot.foundation.concurrent.AtomicReference
 
+@CommonJSExport
 open class DefaultI18N : I18N {
     private val sourceRef: AtomicReference<KWordSource> =
         AtomicReference(MapKeywordSource(HashMap()))

@@ -1,5 +1,8 @@
 package com.mirego.trikot.kword
 
+import com.mirego.trikot.foundation.CommonJSExport
+
+@CommonJSExport
 internal class TranslationArgumentsParser {
     private val regex = Regex("\\{\\{([^\\}]+)\\}\\}")
 
