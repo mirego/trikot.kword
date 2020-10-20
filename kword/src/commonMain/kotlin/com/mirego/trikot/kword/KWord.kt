@@ -17,13 +17,9 @@ interface KWordSource {
 }
 
 class MapKeywordSource(override val strings: Map<String, String>) : KWordSource {
-    override operator fun get(key: String): String {
-        return strings[key] ?: key
-    }
+    override operator fun get(key: String): String = strings[key] ?: key
 
-    override fun getOptional(key: String): String? {
-        return strings[key]
-    }
+    override fun getOptional(key: String): String? = strings[key]
 }
 
 object KWord : DefaultI18N()
