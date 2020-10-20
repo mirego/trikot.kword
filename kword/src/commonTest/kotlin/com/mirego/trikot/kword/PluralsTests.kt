@@ -3,7 +3,6 @@ package com.mirego.trikot.kword
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
-import kotlin.test.assertTrue
 
 class PluralsTests {
     private val simpleKey = object : KWordKey { override val translationKey = "simpleKey" }
@@ -51,5 +50,4 @@ class PluralsTests {
         assertEquals("${defaultKey.translationKey} $expectedArgument 2", results[2])
         assertEquals("${threeKey.translationKey} $expectedArgument 3", results[3])
     }
-
 }
