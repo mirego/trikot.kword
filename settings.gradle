@@ -22,4 +22,4 @@ pluginManagement {
 }
 rootProject.name = 'trikot.kword'
 
-include 'kword-plugin', 'kword', 'android-ktx'
+include 'kword-plugin', 'kword'

@@ -78,6 +78,9 @@ kotlin {
 
         androidMain {
             dependsOn commonMain
+            dependencies {
+                implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:$kotlinx_serialization_version"
+            }
         }
 
         nativeMain {
