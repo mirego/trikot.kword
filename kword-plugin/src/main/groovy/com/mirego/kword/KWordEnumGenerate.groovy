@@ -82,6 +82,6 @@ class KWordEnumGenerate extends DefaultTask {
 
     @OutputFile
     File getGeneratedClassFile() {
-        return project.file(new File(getGeneratedDir(), getEnumClassName().replaceAll(/\./, '/') + '.kt'))
+        return new File(getGeneratedDir(), getEnumClassName().replaceAll(/\./, '/') + '.kt')
     }
 }
