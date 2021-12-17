@@ -11,7 +11,6 @@ repositories {
     mavenLocal()
     mavenCentral()
     maven("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers")
-    maven("https://kotlin.bintray.com/kotlinx")
     maven("https://jitpack.io")
     maven("https://plugins.gradle.org/m2/")
     maven("https://s3.amazonaws.com/mirego-maven/public")
