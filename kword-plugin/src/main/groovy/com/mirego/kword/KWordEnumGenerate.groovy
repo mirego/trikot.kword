@@ -47,7 +47,7 @@ class KWordEnumGenerate extends DefaultTask {
 
     private writeFile(ClassName generatedClassName, TypeSpec.Builder enumBuilder) {
         FileSpec.builder(generatedClassName.packageName, generatedClassName.simpleName)
-            .indent("    ")
+            .indent(" ".repeat(4))
             .addType(enumBuilder.build())
             .build()
             .writeTo(getGeneratedDir())
